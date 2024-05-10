@@ -2,10 +2,8 @@
 
 ## To run in development mode:
 
-1. Open the **client** directory
+1. Run `npm install` to install dependencies
 
-2. Run `npm install` to install dependencies
+2. Run `npm run dev` to run app
 
-3. Run `npm run dev` to run app
-
-4. Open [http://localhost:3000](http://localhost:3000) to view it in your browser
+3. Open [http://localhost:3000](http://localhost:3000) to view it in your browser
