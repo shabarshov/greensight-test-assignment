@@ -1,0 +1,32 @@
+@use "styles/colors.scss" as colors;
+// @use "styles/fonts.scss";
+
+.send-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 44px;
+  padding: 8px 32px 8px 32px;
+  gap: 8px;
+  border-radius: 4px;
+
+  background-color: colors.$blue;
+
+  &:not([disabled]):hover {
+    background-color: colors.$blueHover;
+    cursor: pointer;
+  }
+
+  &:disabled {
+    background-color: colors.$lightBlue;
+  }
+
+  &__text {
+    font-weight: 700;
+    line-height: 21px;
+    letter-spacing: 0.02em;
+    font-size: 15px;
+    color: colors.$white;
+  }
+}

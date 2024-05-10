@@ -1,0 +1,29 @@
+@use "styles/colors.scss" as colors;
+// @use "styles/fonts";
+
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+
+  line-height: 19.6px;
+  font-size: 14px;
+
+  color: colors.$blue;
+  width: fit-content;
+  text-decoration: none;
+
+  svg path {
+    height: 16px;
+    width: 16px;
+    fill: colors.$blue;
+  }
+
+  &__span {
+    border-bottom: 1px solid rgba(colors.$blue, 0.2);
+
+    line-height: 19.6px;
+    font-size: 14px;
+  }
+}

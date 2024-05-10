@@ -1,0 +1,89 @@
+@use "styles/colors.scss" as colors;
+// @use "styles/fonts.scss";
+
+$cursor: url("../../assets/icons/mouse.svg");
+
+.select-form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  width: 288px;
+  height: 63px;
+
+  &__label {
+    position: absolute;
+    top: 0px;
+
+    line-height: 15px;
+    font-size: 12px;
+    font-weight: 500;
+    color: colors.$black;
+  }
+
+  &__head {
+    position: absolute;
+    top: 19px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 44px;
+    width: 100%;
+
+    background-color: colors.$white;
+
+    border: 1px solid colors.$grey400;
+    border-radius: 4px;
+    padding: 4px 12px 4px 12px;
+  }
+
+  &__head-text {
+    line-height: 19.6px;
+    font-size: 14px;
+    &--selected {
+      color: colors.$black;
+    }
+
+    &--not-selected {
+      color: colors.$grey600;
+    }
+  }
+
+  &__content {
+    position: absolute;
+    top: 67px;
+
+    width: 100%;
+
+    z-index: 10;
+    overflow: hidden;
+
+    box-shadow: 0px 0px 24px 0px #26292b26;
+    border-radius: 4px;
+
+    background-color: colors.$white;
+
+    &:hover {
+      cursor: $cursor 0 0, pointer;
+    }
+  }
+
+  &__chevron {
+    transition: transform 0.2s ease;
+    transform: rotate(0deg);
+  }
+
+  &__chevron--reverted {
+    transition: transform 0.2s ease;
+    transform: rotate(180deg);
+  }
+}
+
+@media (min-width: 1440px) {
+  .select-form {
+    max-width: 265.5px;
+  }
+}

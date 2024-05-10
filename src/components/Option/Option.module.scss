@@ -1,0 +1,24 @@
+@use "styles/colors.scss" as colors;
+// @use "styles/fonts.scss";
+
+.select-form__option {
+  display: flex;
+  align-self: center;
+
+  height: 40px;
+  padding: 10px 16px 10px 16px;
+
+  list-style-type: none;
+
+  transition: background-color 0.1s ease-in-out;
+
+  &:hover {
+    background-color: colors.$blue;
+  }
+}
+
+.select-form__option-text {
+  line-height: 19.6px;
+  font-size: 14px;
+  color: colors.$black;
+}

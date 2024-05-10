@@ -1,0 +1,17 @@
+@use "styles/colors.scss" as colors;
+// @use "styles/fonts";
+
+.link {
+  width: fit-content;
+
+  &__a {
+    height: 20px;
+
+    font-size: 16px;
+    line-height: 23.2px;
+    color: colors.$blue;
+    text-decoration: none;
+
+    border-bottom: 1px solid rgba(colors.$blue, 0.2);
+  }
+}

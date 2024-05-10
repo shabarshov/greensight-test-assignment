@@ -1,0 +1,38 @@
+@use "styles/colors.scss" as colors;
+// @use "styles/fonts.scss";
+
+.input-form {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  &__label {
+    line-height: 15px;
+    font-size: 12px;
+    font-weight: 500;
+    color: colors.$black;
+  }
+
+  &__input {
+    min-width: 288px;
+
+    height: 44px;
+    line-height: 19.6px;
+    font-size: 14px;
+    color: colors.$black;
+
+    background-color: colors.$white;
+
+    border: 1px solid colors.$grey400;
+    border-radius: 4px;
+    padding: 4px 12px 4px 12px;
+
+    &::placeholder {
+      color: colors.$grey600;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
