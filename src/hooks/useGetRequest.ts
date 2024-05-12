@@ -5,16 +5,17 @@ interface ApiResponse<T> {
   ok: boolean
   status: number | null
   body: T | null
+  isLoading: boolean
   setUrl: Dispatch<SetStateAction<string>>
-  error: string | null
 }
 
 const useGetRequest = <T>(initialUrl: string): ApiResponse<T> => {
   const [url, setUrl] = useState<string>(initialUrl)
-  const [body, setBody] = useState<T | null>(null)
+
   const [ok, setOk] = useState<boolean>(false)
   const [status, setStatus] = useState<number | null>(null)
-  const [error, setError] = useState<string | null>(null)
+  const [body, setBody] = useState<T | null>(null)
+  const [isLoading, setIsLoading] = useState<boolean>(false)
 
   useEffect(() => {
     const sendRequest = async () => {
@@ -24,19 +25,21 @@ const useGetRequest = <T>(initialUrl: string): ApiResponse<T> => {
 
         setOk(response.ok)
         setStatus(response.status)
-        setError(null)
       } catch (e: any) {
+        console.log(e.message)
         setBody(null)
         setOk(false)
         setStatus(null)
-        setError(e.message)
       }
+
+      setIsLoading(false)
     }
 
+    setIsLoading(true)
     sendRequest()
   }, [url])
 
-  return { ok, status, body, error, setUrl }
+  return { ok, status, body, isLoading, setUrl }
 }
 
 export default useGetRequest
