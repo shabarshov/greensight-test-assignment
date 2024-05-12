@@ -130,4 +130,4 @@ interface Vacancies {
   items: Vacancy[]
 }
 
-export type { Vacancies }
+export type { Vacancies, Vacancy }
