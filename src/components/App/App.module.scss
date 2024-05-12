@@ -1,29 +1,16 @@
 @use "styles/colors.scss" as colors;
 
 .app {
-  box-sizing: border-box;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 32px;
 
   min-width: 320px;
-
-  padding-top: 32px;
-
-  &__request-info {
-    font-weight: 500;
-    line-height: 25.2px;
-    font-size: 18px;
-    color: colors.$black;
-  }
 }
 
 @media (min-width: 1440px) {
   .app {
     min-width: 1440px;
-    padding: 32px 120px 0px 120px;
   }
 }
